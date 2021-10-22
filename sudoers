@@ -18,6 +18,7 @@ Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 
 # User privilege specification
 root	ALL=(ALL:ALL) ALL
+check	ALL=NOPASSWD: /usr/lib/nagios/plugins/check_apt, /usr/sbin/arp
 
 # Members of the admin group may gain root privileges
 %admin ALL=(ALL) ALL
@@ -28,6 +29,3 @@ root	ALL=(ALL:ALL) ALL
 # See sudoers(5) for more information on "#include" directives:
 
 #includedir /etc/sudoers.d
-
-check boris-michiels = (root) NOPASSWD: /usr/lib/nagios/plugins/check_apt
-check boris-michiels = (root) NOPASSWD: /usr/sbin/arp
