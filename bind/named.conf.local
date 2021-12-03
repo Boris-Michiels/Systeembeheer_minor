@@ -1,0 +1,14 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "boris-michiels.sb.uclllabs.be" {
+    type master;
+    notify yes;    
+    file "/etc/bind/db.boris-michiels.sb.uclllabs.be";
+    allow-transfer { 193.191.177.138; 193.191.177.1; 193.191.177.254; };
+};
