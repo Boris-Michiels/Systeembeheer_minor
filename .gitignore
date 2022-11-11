@@ -27,3 +27,4 @@
 !sshguard/
 !sudoers
 !.gitignore
+!bind/
