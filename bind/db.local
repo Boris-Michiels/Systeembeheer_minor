@@ -1,14 +1,19 @@
 ;
 ; BIND data file for local loopback interface
 ;
-$TTL	604800
-@	IN	SOA	ns.boris-michiels.sb.uclllabs.be borismichiels.gmail.com. (
-			      3		; Serial
+$TTL	500
+@	IN	SOA	ns.boris-michiels.sb.uclllabs.be. boris\michiels.student.ucll.be. (
+			      6		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	IN	NS	localhost.
-@	IN	A	127.0.0.1
-@	IN	AAAA	::1
+@	IN	NS	ns.boris-michiels.sb.uclllabs.be.
+@	IN	NS	ns1.uclllabs.be.
+@	IN	NS	ns2.uclllabs.be.
+ns	IN	A	193.191.177.134
+
+www	IN	A	193.191.177.134
+
+test	IN	A	193.191.177.254
