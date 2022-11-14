@@ -29,3 +29,4 @@
 !.gitignore
 !bind/
 bind/zones
+bind/named.conf.mrt-zones

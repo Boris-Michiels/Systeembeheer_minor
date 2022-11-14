@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $(id -u) -ne 0 ]; then
+        echo "Run this script as root"
+        exit 1
+fi
+
+if [ $# -eq 0 ]; then
+	echo "Supply a zone name to add"
+	exit 1
+fi
+
+echo "zone \"$1.boris-michiels.sb.uclllabs.be\" {
+     type master;
+     file \"/etc/bind/zones/db.$1\";
+     allow-transfer { 193.191.177.254; 193.191.177.4; };
+};
+" >> /etc/bind/named.conf.mrt-zones
+
+touch /etc/bind/zones/db.$1
