@@ -28,3 +28,4 @@
 !sudoers
 !.gitignore
 !bind/
+bind/zones
