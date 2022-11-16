@@ -1,6 +1,6 @@
 $TTL	10800
 @	IN	SOA	ns.boris-michiels.sb.uclllabs.be. boris\.michiels.student.ucll.be. (
-			      9		; Serial
+			     12		; Serial
 			  10800		; Refresh
 			   3600		; Retry
 			2419200		; Expire
