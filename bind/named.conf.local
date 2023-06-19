@@ -9,5 +9,11 @@
 zone "boris-michiels.sb.uclllabs.be" {
 	type master;
 	file "/etc/bind/db.boris-michiels.sb.uclllabs.be";
-	allow-transfer { 193.191.176.254; 193.191.177.4; };
+	allow-transfer { 193.191.176.254; 193.191.177.4; 193.191.177.138; };
+};
+
+zone "brick-vanroekel.sb.uclllabs.be" {
+	type slave;
+	file "/var/Cache/bind/db.brick-vanroekel.sb.uclllabs.be";
+	masters { 193.191.177.138; };
 };
