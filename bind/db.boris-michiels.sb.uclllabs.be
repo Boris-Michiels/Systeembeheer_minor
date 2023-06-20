@@ -19,6 +19,3 @@ www	IN	A	193.191.177.134
 test	IN	A	193.191.177.254
 
 
-www.tt	IN	A	193.191.177.254
-subzoneiyo1vu	IN	NS	ns.boris-michiels.sb.uclllabs.be.
-subzoneniegh4	IN	NS	ns.boris-michiels.sb.uclllabs.be.
