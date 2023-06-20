@@ -38,4 +38,5 @@ originalSerial=$(grep -Po '\d+\s+; Serial' "/etc/bind/db.boris-michiels.sb.uclll
 updatedSerial=$(("$originalSerial" + 1))
 sed -i "0,/$originalSerial/{s/$originalSerial/$updatedSerial/}" "/etc/bind/db.boris-michiels.sb.uclllabs.be"
 
-systemctl restart named
+rndc reload
+#systemctl restart named
