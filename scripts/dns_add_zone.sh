@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ $EUID -ne 0 ]; then
-        echo "Run this script as root"
-        exit 1
+	echo "Run this script as root"
+	exit 1
 fi
 
 if [ $# -ne 1 ]; then
@@ -29,7 +29,6 @@ echo "\$TTL	604800
 			 604800	)	; Negative Cache TTL
 ;
 @	IN	NS	ns.boris-michiels.sb.uclllabs.be.
-
 ns	IN	A	193.191.177.134" > /etc/bind/zones/db.$1
 
 echo "$1	IN	NS	ns.boris-michiels.sb.uclllabs.be." >> /etc/bind/db.boris-michiels.sb.uclllabs.be
