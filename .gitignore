@@ -30,3 +30,4 @@
 !bind/
 bind/zones
 bind/named.conf.mrt-zones
+!vsftpd.conf
