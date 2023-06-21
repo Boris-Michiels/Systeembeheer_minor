@@ -5,12 +5,19 @@ if [ $EUID -ne 0 ]; then
 	exit 1
 fi
 
+TYPE=""
 
-if [ -z "${t}" ]; then
-	TYPE="A"
-	HOST=$1
-	IP=$2
-	DOMAIN=$3
+function check_file() {
+    NAME=${1##*/}
+    if [ $NAME == "db.boris-michiels.sb.uclllabs.be" ]; then
+	FILE=/etc/bind/$NAME
+    fi
+}
+
+if [ $1 != "-t" ]; then
+	FILE=/etc/bind/zones/db.$3
+	check_file $FILE
+        echo "$1	IN	A	$2" >> $FILE
 fi
 
 while getopts t: o; do
@@ -24,9 +31,24 @@ while getopts t: o; do
     esac
 done
 
+case $TYPE in
+    A)
+	FILE=/etc/bind/zones/db.$5
+	check_file $FILE
+	echo "$3	IN	A	$4" >> $FILE
+	;;
+    CNAME)
+	FILE=/etc/bind/zones/db.$4
+	check_file $FILE
+	echo "$3	IN	CNAME	$4" >> $FILE
+	;;
+    MX)
+	FILE=/etc/bind/zones/db.$5
+	check_file $FILE
+	echo "@	IN	MX	10	$3.$5." >> $FILE
+	;;
+esac
 
-
-
-echo $TYPE;
-echo $1;
-echo $2;
+originalSerial=$(grep -Po '\d+\s+; Serial' "$FILE" | cut -f1)
+updatedSerial=$(("$originalSerial" + 1))
+sed -i "0,/$originalSerial/{s/$originalSerial/$updatedSerial/}" "$FILE"

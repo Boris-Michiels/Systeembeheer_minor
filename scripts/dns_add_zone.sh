@@ -12,13 +12,11 @@ fi
 
 echo "zone \"$1.boris-michiels.sb.uclllabs.be\" {
      type master;
-     file \"/etc/bind/zones/db.$1\";
-};
-
-" >> /etc/bind/named.conf.mrt-zones
+     file \"/etc/bind/zones/db.$1.boris-michiels.sb.uclllabs.be\";
+};" >> /etc/bind/named.conf.mrt-zones
 
 mkdir -p /etc/bind/zones
-touch /etc/bind/zones/db.$1
+touch /etc/bind/zones/db.$1.boris-michiels.sb.uclllabs.be
 
 echo "\$TTL	604800
 @	IN	SOA	ns.$1.boris-michiels.sb.uclllabs.be. r0760222.ucll.be. (
@@ -29,7 +27,7 @@ echo "\$TTL	604800
 			 604800	)	; Negative Cache TTL
 ;
 @	IN	NS	ns.boris-michiels.sb.uclllabs.be.
-ns	IN	A	193.191.177.134" > /etc/bind/zones/db.$1
+ns	IN	A	193.191.177.134" > /etc/bind/zones/db.$1.boris-michiels.sb.uclllabs.be
 
 echo "$1	IN	NS	ns.boris-michiels.sb.uclllabs.be." >> /etc/bind/db.boris-michiels.sb.uclllabs.be
 
