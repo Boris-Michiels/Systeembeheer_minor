@@ -43,7 +43,6 @@ case $TYPE in
 	;;
     MX)
 	FILE=/etc/bind/db.$5
-	check_file $FILE
 	echo "@	IN	MX	10	$3.$5.
 $3	IN	A	$4" >> $FILE
 	;;
