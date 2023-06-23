@@ -5,11 +5,6 @@ if [ $EUID -ne 0 ]; then
 	exit 1
 fi
 
-if [ $# -ne 1 ]; then
-	echo "Supply a zone name to add"
-	exit 1
-fi
-
 echo "zone \"$1.boris-michiels.sb.uclllabs.be\" {
      type master;
      file \"/etc/bind/zones/db.$1.boris-michiels.sb.uclllabs.be\";
