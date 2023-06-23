@@ -28,6 +28,8 @@
 !sudoers
 !.gitignore
 !bind/
+bind/db.boris-michiels.sb.uclllabs.be
 bind/zones
 bind/named.conf.mrt-zones
 !vsftpd.conf
+!apache2/
