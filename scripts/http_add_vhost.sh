@@ -9,6 +9,11 @@ VHOST=$(echo "$1" | cut -d "." -f1)
 SUBDOMAIN=$(echo "$1" | cut -d "." -f2)
 DBFILE="db.$SUBDOMAIN.boris-michiels.sb.uclllabs.be"
 
+if [ ! -f "/etc/bind/zones/$DBFILE" ]; then
+    echo "subdomain does not exist"
+    exit 1
+fi
+
 mkdir -p /var/www/html/$SUBDOMAIN/$VHOST
 
 echo "<VirtualHost *:80>
