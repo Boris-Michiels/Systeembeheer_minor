@@ -33,3 +33,5 @@ bind/zones
 bind/named.conf.mrt-zones
 !vsftpd.conf
 !apache2/
+apache2/sites-available/mrt.*
+apache2/sites-enabled
