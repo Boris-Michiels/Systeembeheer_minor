@@ -38,3 +38,4 @@ apache2/sites-enabled
 !letsencrypt/
 !mysql/
 !postfix/
+!dovecot/
