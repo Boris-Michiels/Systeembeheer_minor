@@ -27,3 +27,6 @@ socket = /run/mysqld/mysqld.sock
 # Import all .cnf files from configuration directory
 !includedir /etc/mysql/conf.d/
 !includedir /etc/mysql/mariadb.conf.d/
+
+[mysqld]
+event_scheduler=ON
