@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.boris-michiels.sb.uclllabs.be. r0760223.ucll.be. (
-			    290		; Serial
+			    307		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -27,6 +27,9 @@ secure	IN	CAA	0	iodef	"mailto:boris.michiels@student.ucll.be"
 supersecure	IN	A	193.191.177.134
 supersecure	IN      CAA     0       issue   "letsencrypt.org"
 supersecure	IN      CAA     0       iodef   "mailto:boris.michiels@student.ucll.be"
+
+@	IN	MX	10	mx.boris-michiels.sb.uclllabs.be
+mx	IN	A	193.191.177.134
 
 test	IN	A	193.191.177.254
 
