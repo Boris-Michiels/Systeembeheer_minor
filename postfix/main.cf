@@ -1,5 +1,8 @@
 # See /usr/share/postfix/main.cf.dist for a commented, more complete version
 
+myhostname = mx.boris-michiels.sb.uclllabs.be
+mydomain = boris-michiels.sb.uclllabs.be
+
 smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
 biff = no
 
@@ -13,9 +16,13 @@ alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 mydestination = $myhostname, localhost.$mydomain, localhost
 relayhost = 
-mynetworks = 127.0.0.0/8, 10.0.0.0/24, 172.16.0.0/20, 192.168.0.0/16
-inet_interfaces = loopback-only
+mynetworks = 127.0.0.0/8, 193.191.177.134/24, 10.0.0.0/24, 172.16.0.0/20, 192.168.0.0/16
+inet_interfaces = 193.191.177.134, 127.0.0.1
 recipient_delimiter = +
 
 compatibility_level = 2
 
+virtual_mailbox_domains=voris-michiels.sb.uclllabs.be
+virtual_mailbox_base=/var/vmail
+virtual_mailbox_maps=hash:/etc/postfix/vmailbox
+virtual_alias_maps=hash:/etc/postfix/virtual

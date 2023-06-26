@@ -1,0 +1,16 @@
+[Unit]
+Description=IPTables rules
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/usr/local/bin
+ExecStart=firewall start
+ExecReload=firewall restart
+ExecStop=firewall stop
+
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
