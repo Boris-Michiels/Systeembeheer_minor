@@ -20,8 +20,8 @@ echo "<VirtualHost *:80>
         ServerName $VHOST.$SUBDOMAIN.boris-michiels.sb.uclllabs.be
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html/$SUBDOMAIN/$VHOST
-        ErrorLog ${APACHE_LOG_DIR}/$VHOST.$SUBDOMAIN-error.log
-        CustomLog ${APACHE_LOG_DIR}/$VHOST.$SUBDOMAIN-access.log combined
+        ErrorLog \${APACHE_LOG_DIR}/$VHOST.$SUBDOMAIN-error.log
+        CustomLog \${APACHE_LOG_DIR}/$VHOST.$SUBDOMAIN-access.log combined
 </VirtualHost>" > /etc/apache2/sites-available/mrt.$VHOST.$SUBDOMAIN.conf
 
 echo "welcome $VHOST.$SUBDOMAIN" > /var/www/html/$SUBDOMAIN/$VHOST/index.html
