@@ -8,4 +8,6 @@ echo "" > /etc/bind/named.conf.mrt-zones
 rm /etc/apache2/sites-enabled/mrt.*
 rm /etc/apache2/sites-available/mrt.*
 
+rm -r /var/www/html/subzone*
+
 echo "Cleaning successful";

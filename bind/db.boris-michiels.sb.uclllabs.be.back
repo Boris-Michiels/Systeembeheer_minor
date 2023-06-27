@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.boris-michiels.sb.uclllabs.be. r0760223.ucll.be. (
-			    335		; Serial
+			    337		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
