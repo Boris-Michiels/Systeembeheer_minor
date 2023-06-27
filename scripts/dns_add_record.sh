@@ -48,8 +48,6 @@ $3	IN	A	$4" >> $FILE
 	;;
 esac
 
-originalSerial=$(grep -Po '\d+\s+; Serial' "$FILE" | cut -f1)
-updatedSerial=$(("$originalSerial" + 1))
-sed -i "0,/$originalSerial/{s/$originalSerial/$updatedSerial/}" "$FILE"
+perl -i -pe '/Serial/ && s/(\d+)/$1+1/e' "$FILE"
 
 rndc reload

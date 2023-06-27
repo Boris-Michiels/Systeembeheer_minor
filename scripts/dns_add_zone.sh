@@ -26,9 +26,7 @@ ns	IN	A	193.191.177.134" > /etc/bind/zones/db.$1.boris-michiels.sb.uclllabs.be
 
 echo "$1	IN	NS	ns.boris-michiels.sb.uclllabs.be." >> /etc/bind/db.boris-michiels.sb.uclllabs.be
 
-originalSerial=$(grep -Po '\d+\s+; Serial' "/etc/bind/db.boris-michiels.sb.uclllabs.be" | cut -f1)
-updatedSerial=$(("$originalSerial" + 1))
-sed -i "0,/$originalSerial/{s/$originalSerial/$updatedSerial/}" "/etc/bind/db.boris-michiels.sb.uclllabs.be"
+perl -i -pe '/Serial/ && s/(\d+)/$1+1/e' "/etc/bind/db.boris-michiels.sb.uclllabs.be"
 
 rndc reload
 #systemctl restart named
