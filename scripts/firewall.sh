@@ -21,15 +21,12 @@ stop () {
 }
 
 case "$1" in
-    start)
-        start
+    start|restart)
+        stop
+	start
         ;;
     stop)
         stop
-        ;;
-    restart)
-        stop
-        start
         ;;
 esac
 exit 0
