@@ -7,7 +7,7 @@ fi
 
 TYPE=""
 
-function check_file() {
+check_file () {
     NAME=${1##*/}
     if [ $NAME == "db.boris-michiels.sb.uclllabs.be" ]; then
 	FILE=/etc/bind/$NAME
