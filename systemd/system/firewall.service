@@ -1,5 +1,5 @@
 [Unit]
-Description=IPTables rules
+Description=iptables rules
 After=network.target
 
 [Service]
