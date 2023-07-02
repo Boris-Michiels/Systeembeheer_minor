@@ -8,8 +8,10 @@ start () {
 stop () {
 	iptables -F
 	iptables -X
+	iptables -P INPUT ACCEPT
 	ip6tables -F
 	ip6tables -X
+	ip6tables -P INPUT ACCEPT
 }
 
 case "$1" in
