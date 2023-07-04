@@ -6,6 +6,7 @@
 :sshguard - [0:0]
 -A INPUT -p tcp -m tcp --dport 22345 -j sshguard
 -A INPUT -p tcp -m multiport --dports 25,80,443,587,993,22345 -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -p udp -m udp --dport 53 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 53 -j ACCEPT
 -A INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
